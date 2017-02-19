@@ -1,0 +1,126 @@
+Router#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES NVRAM  administratively down down
+GigabitEthernet0/0         192.168.20.1    YES manual up                    up
+GigabitEthernet0/1         unassigned      YES NVRAM  administratively down down
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  administratively down down
+
+To change IP address of Router on Port G0/0
+
+Router#
+config t
+Router(config)#int g0/0
+Router(config-if)#ip add 192.168.30.1 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#exit
+Router(config)#exit
+Router#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES NVRAM  administratively down down
+GigabitEthernet0/0         192.168.30.1    YES manual up                    up
+GigabitEthernet0/1         unassigned      YES NVRAM  administratively down down
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  administratively down down
+Router#
+
+To shut port down
+
+Router#config t
+Router(config)#int g0/0
+Router(config-if)#shut
+Router(config-if)#exit
+Router(config)#exit
+Router#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES NVRAM  administratively down down
+GigabitEthernet0/0         192.168.30.1    YES manual administratively down down
+GigabitEthernet0/1         unassigned      YES NVRAM  administratively down down
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  administratively down down
+
+To open port that has been shut
+
+Router#
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int g0/0
+Router(config-if)#no shut
+Router(config-if)#exit
+
+Router#show ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Embedded-Service-Engine0/0 unassigned      YES NVRAM  administratively down down
+GigabitEthernet0/0         192.168.30.1    YES manual up                    up
+GigabitEthernet0/1         unassigned      YES NVRAM  administratively down down
+Serial0/0/0                unassigned      YES unset  administratively down down
+Serial0/0/1                unassigned      YES unset  administratively down down
+Router#
+
+To give router Hostname
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname Sligo
+Sligo(config)#
+
+Look at devices connect to.
+
+Sligo#show cdp neighbors
+
+
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone,
+                  D - Remote, C - CVTA, M - Two-port Mac Relay
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+Switch           Gig 0/0           146              S I   WS-C2960+ Gig 0/1
+
+Total cdp entries displayed : 1
+Sligo#
+
+
+Look at connected networks.
+
+Sligo#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      192.168.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.30.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.30.1/32 is directly connected, GigabitEthernet0/0
+Sligo#
+
+To input enable secret Security 
+
+
+Router>enable
+Router#config t
+Router(config)#enable secret cisco
+
+To input Console Security 
+
+Router(config)#line con 0
+Router(config-line)#password cisco
+Router(config-line)#login
+
+
+To input Telnet Security 
+
+Router(config-line)#line vty 05
+Router(config-line)#password cisco
+Router(config-line)#login
+Router(config-line)#exit
+Router(config)#
+
+To encrypt Console and Telnet passwords
+
+Router(config)#service password-encryption 

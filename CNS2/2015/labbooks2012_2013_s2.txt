@@ -1,0 +1,82 @@
+
+Computer Systems and Networking2
+Labs 2012-2013 semester 2
+
+
+Week1 beginning Monday Jan 21st        
+
+Lab 1. Packet Tracer
+
+How to open packet tracer and how to use components
+Setup 2 pcs conected to switch and connect switch to router.
+
+Ip address on PC's (static Ip addresses)
+Ip address on Router.
+
+Explain concepts
+Ip addressing scheme
+Class a,b,c,
+Subnet mask
+Default gateway
+Network address
+Broadcast Address
+
+
+     
+Week 2 beginning Mon Jan 28th
+
+Lab 2. 
+a.
+
+Setup two switches to Router.
+2 pc's(static IP addresses)
+1 server
+
+b.
+Setup two switches to Router.
+2 pc's(Dynamic IP addresses)
+1 server
+setup up server with DHCP and setup up PC with DHCP
+
+
+Explain concepts
+Ip addressing scheme
+Class a,b,c,
+Subnet mask
+Default gateway
+Network address
+Broadcast Address
+Ip-address's Static V Dynamic
+
+
+Week 3 beginning Mon Feb 4th
+lab 3. 
+
+Setup network topolgy with 3 networks
+Setup two Routers.
+Use a serial link between both Routers
+Setup one switch on each Router
+2 pc's(Dynamic IP addresses)
+1 server
+setup up server with DHCP and setup up PC with DHCP
+
+Identify and name all networks
+Identify the different Default Gateways
+Get PC's to ping each other over network. 
+
+
+
+Explain concepts
+Ip addressing scheme
+Class a,b,c,
+Subnet mask
+Default gateway
+Network address
+Broadcast Address
+Ip-address's Static V Dynamic
+
+Week 4 beginning Mon Feb 11th
+lab 4. 
+Subnetting
+Given network address 192.168.10.0
+Require 3 usable subnets
